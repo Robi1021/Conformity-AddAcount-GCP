@@ -44,7 +44,6 @@ To setup the IAM permission I've create a terraform template that you can use, i
  Then you can execute the following:
 
    ```bash
-   cd IAM
    terraform init
    terraform plan -out=plan
    terraform apply -auto-approve
