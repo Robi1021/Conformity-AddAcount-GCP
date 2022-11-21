@@ -27,6 +27,10 @@ To set up a new Cloud Account, you must deploy resources in your GCP account to 
 |PubSub|Cloud Pub/Sub API|
 |ResourceManager|Cloud Resource Manager API|
 
+## get the repo
+````git clone https://github.com/Robi1021/Conformity-AddAcount-GCP.git
+
+
 You can use the gcp-api.sh script to enable the needed APIs all ad once (Billing Account need to be enabled first!)
 
 
