@@ -27,13 +27,33 @@ To set up a new Cloud Account, you must deploy resources in your GCP account to 
 |PubSub|Cloud Pub/Sub API|
 |ResourceManager|Cloud Resource Manager API|
 
+## enable API through gcloud cli with: (Billing Account need to be enabled first!)
+```
+gcloud services enable bigquery.googleapis.com
+gcloud services enable apikeys.googleapis.com
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable accessapproval.googleapis.com
+gcloud services enable cloudkms.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable storage.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable sqladmin.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable dns.googleapis.com
+gcloud services enable dataproc.googleapis.com
+gcloud services enable container.googleapis.com
+gcloud services enable logging.googleapis.com
+gcloud services enable pubsub.googleapis.com
+gcloud services enable cloudresourcemanager.googleapis.com
+```
+
+You can use the gcp-api.sh script to enable the needed APIs all ad once 
+
 ## get the repo
 ```
 git clone https://github.com/Robi1021/Conformity-AddAcount-GCP.git
 ```
-
-You can use the gcp-api.sh script to enable the needed APIs all ad once (Billing Account need to be enabled first!)
-
 
 ## Setup IAM Permissions
 
@@ -41,7 +61,7 @@ To setup the IAM permission I've create a terraform template that you can use, i
 
  To install terraform, follow this [Guide](https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform)
 
- First you need to provide in the terraform template (variables.tf file):
+ First you need to provide in the terraform template (variables.tf file or use the example `gcp.tfvars` file, these are the values that need to be provided::
 
 - Project ID
 - GCP Region
@@ -52,4 +72,5 @@ To setup the IAM permission I've create a terraform template that you can use, i
    terraform init
    terraform plan -out=plan
    terraform apply -auto-approve
+   terraform apply -var-file="gcp.tfvars` (In case you decided to use the `gcp.tfvars`)
    ```
